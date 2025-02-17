@@ -21,7 +21,7 @@ It will install:
 ## Configuration script
 
 ```
-wget -O - https://raw.githubusercontent.com/fabiengaubert/linux_configuration/refs/heads/main/ubuntu_desktop_config.sh | sudo bash
+wget -O - https://raw.githubusercontent.com/fabiengaubert/linux_configuration/refs/heads/main/ubuntu_desktop_config.sh | bash
 ```
 
 It will configure:
