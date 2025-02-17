@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -e "This script provides basic setup and configuration on a fresh Linux installation."
+echo -e "This script provides basic setup and configuration on a fresh Ubuntu 24.04 installation."
 
 # update the package list
 sudo apt update
@@ -9,7 +9,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # install basic packages
-sudo apt install -y vim git wget gpg apt-transport-https net-tools build-essential
+sudo apt install -y vim git wget gpg apt-transport-https net-tools build-essential ca-certificates curl software-properties-common
 
 # install VSCode following official instructions
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -19,6 +19,14 @@ rm -f packages.microsoft.gpg
 
 sudo apt update
 sudo apt install -y code
+
+# install docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install -y docker-ce
+sudo usermod -aG docker ${USER}
 
 # set natural scrolling for mouse and touchpad
 gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
