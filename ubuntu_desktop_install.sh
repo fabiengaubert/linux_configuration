@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -e "This script provides basic setup and configuration on a fresh Ubuntu 24.04 installation."
+echo -e "This script provides basic setup and configuration on a fresh Ubuntu Desktop 24.04 installation."
 
 # update the package list
 sudo apt update
@@ -27,7 +27,3 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 sudo apt update
 sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
-
-# set natural scrolling for mouse and touchpad
-gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
-gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true

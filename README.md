@@ -1,14 +1,14 @@
-# linux_configuration
+# Ubuntu Desktop setup helpers
 
-Basic setup and configuration on a fresh Linux installation (tested on Ubuntu 24.04 LTS).
+Basic setup and configuration on a fresh Linux installation (tested on Ubuntu Desktop 24.04 LTS).
 
+The scripts can be executed directly from this github repository.
 
-Execute the script directly from this github repository:
+## Installation script
 
 ```
-sudo wget -O - https://raw.githubusercontent.com/fabiengaubert/linux_configuration/refs/heads/main/linux_configuration.sh | sudo bash
+sudo wget -O - https://raw.githubusercontent.com/fabiengaubert/linux_configuration/refs/heads/main/ubuntu_desktop_install.sh | sudo bash
 ```
-
 
 It will install:
 - vim
@@ -18,10 +18,16 @@ It will install:
 - VSCode
 - Docker
 
+## Configuration script
+
+```
+wget -O - https://raw.githubusercontent.com/fabiengaubert/linux_configuration/refs/heads/main/ubuntu_desktop_config.sh | sudo bash
+```
+
 It will configure:
 - scroll mode to natural (like on MacOS)
 
 
 Note:
-Keyboard configuration is better done directly through Desktop installer as there are some known issues with *localectl* on Ubuntu 24.04 (see: [localectl: Failed to read list of keymaps](https://www.claudiokuenzler.com/blog/1257/how-to-fix-missing-keymaps-debian-ubuntu-localectl-failed-read-list)).
+Keyboard configuration is better done directly through the Desktop installer as there are some known issues with *localectl* on Ubuntu 24.04 (see: [localectl: Failed to read list of keymaps](https://www.claudiokuenzler.com/blog/1257/how-to-fix-missing-keymaps-debian-ubuntu-localectl-failed-read-list)).
 
