@@ -6,7 +6,7 @@ Basic setup and configuration on a fresh Linux installation (tested on Ubuntu 24
 Execute the script directly from this github repository:
 
 ```
-wget -O - https://raw.githubusercontent.com/fabiengaubert/linux_configuration/refs/heads/main/linux_configuration.sh | sudo bash
+sudo wget -O - https://raw.githubusercontent.com/fabiengaubert/linux_configuration/refs/heads/main/linux_configuration.sh | sudo bash
 ```
 
 
