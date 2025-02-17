@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-clear
 echo -e "This script provides basic setup and configuration on a fresh Linux installation."
 
 # update the package list
@@ -10,7 +9,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # install basic packages
-sudo apt install -y vim git wget gpg apt-transport-https
+sudo apt install -y vim git wget gpg apt-transport-https net-tools build-essential
 
 # install VSCode following official instructions
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -20,3 +19,7 @@ rm -f packages.microsoft.gpg
 
 sudo apt update
 sudo apt install -y code
+
+# set natural scrolling for mouse and touchpad
+gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true
+gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true
