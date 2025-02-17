@@ -9,7 +9,7 @@ sudo apt update
 sudo apt upgrade -y
 
 # install basic packages
-sudo apt install -y vim git wget gpg apt-transport-https net-tools build-essential ca-certificates curl software-properties-common
+sudo apt install -y vim git wget gpg apt-transport-https net-tools build-essential ca-certificates curl software-properties-common dbus-x11
 
 # install VSCode following official instructions
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
