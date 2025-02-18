@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -e
 echo -e "This script provides basic setup and configuration on a fresh Ubuntu Server 24.04 installation."
 
 # update the package list
