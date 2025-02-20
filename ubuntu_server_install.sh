@@ -20,7 +20,14 @@ sudo apt update
 sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
 
-# install home assistant
+
+# install and configure ufw
+sudo apt install ufw
+sudo ufw allow OpenSSH
+sudo ufw enable
+
+TO-DO:
+# install home assistant OS to allow add-ons
 # configure DDNS
 # install WireGard
 # install adblock
