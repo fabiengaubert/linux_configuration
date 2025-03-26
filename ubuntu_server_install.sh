@@ -20,15 +20,28 @@ sudo apt update
 sudo apt install -y docker-ce
 sudo usermod -aG docker ${USER}
 
-
 # install and configure ufw
 sudo apt install ufw
 sudo ufw allow OpenSSH
 sudo ufw enable
 
-TO-DO:
+
+# install WireGard
+sudo apt install -y wireguard
+sudo wg genkey | sudo tee /etc/wireguard/server_private.key
+sudo chmod 600 /etc/wireguard/server_private.key
+sudo cat /etc/wireguard/private.key | wg pubkey | sudo tee /etc/wireguard/public.key
+
+date="$(date +%s%N)"
+machine_id="$(cat /var/lib/dbus/machine-id)"
+partial_ip=$(echo "${date}${machine_id}" | sha1sum | cut -c 31-41)
+ip=fd:${partial_ip:0:2}:${partial_ip:2:2}:${partial_ip:4:2}:${partial_ip:6:2}:${partial_ip:8:2}::/64
+echo $ip
+
+
+
+#TO-DO:
 # install home assistant OS to allow add-ons
 # configure DDNS
-# install WireGard
 # install adblock
 # install audio server

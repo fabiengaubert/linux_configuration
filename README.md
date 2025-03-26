@@ -47,3 +47,4 @@ It will install:
 - net-tools
 - build-essential
 - Docker
+- Wireguard
